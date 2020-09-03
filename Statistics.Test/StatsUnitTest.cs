@@ -33,18 +33,16 @@ namespace Statistics.Test
             //Double.NaN (not-a-number), as described in
             //https://docs.microsoft.com/en-us/dotnet/api/system.double.nan?view=netcore-3.1
         }
-        
-        // Test case for One or More NaN as input then return statistics of remaining numbers
-            [Fact]
-            public void WhenOneOrMoreNanThenReturnStatisticsOfRemainingNumbers()
-            {
-                var statsComputer = new StatsComputer();
-                var computedStats = statsComputer.CalculateStatistics(new List<float> { 1.5F, (float)Double.NaN, 3.2F, 4.5F });
-                float epsilon = 0.001F;
-                Assert.True(Math.Abs(computedStats.Average - 3.067) <= epsilon);
-                Assert.True(Math.Abs(computedStats.Max - 4.5) <= epsilon);
-                Assert.True(Math.Abs(computedStats.Min - 1.5) <= epsilon);
-                Console.WriteLine("ReportsAverageMinMax Complete");
-            }
+        [Fact]
+        public void WhenInputHavingOneOrMoreNanThenReturnStatisticsOfRemainingNumbers()
+        {
+            var statsComputer = new StatsComputer();
+            var computedStats = statsComputer.CalculateStatistics(new List<float>{1.5F, (float)Double.NaN,3.2F, 4.5F});
+            float epsilon = 0.001F;
+            Assert.True(Math.Abs(computedStats.Average - 3.067F) <= epsilon);
+            Assert.True(Math.Abs(computedStats.Max - 4.5F) <= epsilon);
+            Assert.True(Math.Abs(computedStats.Min - 1.5F) <= epsilon);
+            Console.WriteLine("ReportsAverageMinMax Complete");
+        }
     }
 }
