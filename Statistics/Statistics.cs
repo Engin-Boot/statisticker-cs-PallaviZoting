@@ -17,8 +17,6 @@ namespace Statistics
               computeStatistics.Max = (float)Double.NaN;
               return computeStatistics;  
            }
-            if (numbers.Count!=0)
-            {
                 if(numbers.Contains(float.NaN))
                 {
                     numbers.RemoveAll(float.IsNaN);
@@ -27,7 +25,6 @@ namespace Statistics
               computeStatistics.Min = numbers.Min();
               computeStatistics.Max = numbers.Max();
               return computeStatistics; 
-            }
         }
     }
 }
