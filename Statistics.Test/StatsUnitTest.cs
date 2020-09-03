@@ -41,7 +41,7 @@ namespace Statistics.Test
                 var statsComputer = new StatsComputer();
                 var computedStats = statsComputer.CalculateStatistics(new List<float> { 1.5F, (float)Double.NaN, 3.2F, 4.5F });
                 float epsilon = 0.001F;
-                Assert.True(Math.Abs(computedStats.Average - 3.066) <= epsilon);
+                Assert.True(Math.Abs(computedStats.Average - 3.067) <= epsilon);
                 Assert.True(Math.Abs(computedStats.Max - 4.5) <= epsilon);
                 Assert.True(Math.Abs(computedStats.Min - 1.5) <= epsilon);
                 Console.WriteLine("ReportsAverageMinMax Complete");
