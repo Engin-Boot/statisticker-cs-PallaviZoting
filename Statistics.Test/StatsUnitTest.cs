@@ -16,7 +16,7 @@ namespace Statistics.Test
         {
             var statsComputer = new StatsComputer();
             var computedStats = statsComputer.CalculateStatistics(
-                new List<float>{1.5, 8.9, 3.2, 4.5});
+            new List<float>{1.5F, 8.9F, 3.2F, 4.5F});
             float epsilon = 0.001F;
             Assert.True(Math.Abs(statsComputer.Average - 4.525) <= epsilon);
             Assert.True(Math.Abs(statsComputer.Max - 8.9) <= epsilon);
@@ -26,11 +26,10 @@ namespace Statistics.Test
         public void ReportsNaNForEmptyInput()
         {
             var statsComputer = new StatsComputer();
-            var computedStats = statsComputer.CalculateStatistics(
-                new List<float>{});
-            Assert.True((float)Double.IsNaN(computeStats.Average));
-            Assert.True((float)Double.IsNaN(computeStats.Max));
-            Assert.True((float)Double.IsNaN(computeStats.Min));
+            var computedStats = statsComputer.CalculateStatistics(new List<float>{});
+            Assert.True(Double.IsNaN(computeStats.Average));
+            Assert.True(Double.IsNaN(computeStats.Max));
+            Assert.True(Double.IsNaN(computeStats.Min));
             Console.WriteLine("ReportsNaNForEmptyInput Complete");
 
             //All fields of computedStats (average, max, min) must be
