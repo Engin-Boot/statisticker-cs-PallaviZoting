@@ -37,7 +37,7 @@ namespace Statistics.Test
         public void WhenInputHavingOneOrMoreNanThenReturnStatisticsOfRemainingNumbers()
         {
             var statsComputer = new StatsComputer();
-            var computedStats = statsComputer.CalculateStatistics(new List<float>{1.5F, (float)Double.NaN,3.2F, 4.5F});
+            var computedStats = statsComputer.CalculateStatistics(new List<float>{1.5F, float.NaN, 3.2F, 4.5F});
             float epsilon = 0.001F;
             Assert.True(Math.Abs(computedStats.Average - 3.067F) <= epsilon);
             Assert.True(Math.Abs(computedStats.Max - 4.5F) <= epsilon);
