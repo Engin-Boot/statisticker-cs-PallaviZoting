@@ -16,7 +16,7 @@ namespace Statistics.Test
             float epsilon = 0.001F;
             Assert.True(Math.Abs(computedStats.Average - 4.525) <= epsilon);
             Assert.True(Math.Abs(computedStats.Max - 8.9) <= epsilon);
-            Assert.True(Math.Abs(computedStatsr.Min - 1.5) <= epsilon);
+            Assert.True(Math.Abs(computedStats.Min - 1.5) <= epsilon);
             Console.WriteLine("ReportsAverageMinMax Complete");
         }
         [Fact]
