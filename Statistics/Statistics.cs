@@ -11,9 +11,9 @@ namespace Statistics
            Stats computeStatistics = new Stats();
            if (numbers.Count == 0)
            {
-              computeStatistics.Average = Double.NaN;
-              computeStatistics.Min = Double.NaN;
-              computeStatistics.Max = Double.NaN;
+              computeStatistics.Average = (float)Double.NaN;
+              computeStatistics.Min = (float)Double.NaN;
+              computeStatistics.Max = (float)Double.NaN;
               return computeStatistics;  
            }
               computeStatistics.Average = numbers.Average();
