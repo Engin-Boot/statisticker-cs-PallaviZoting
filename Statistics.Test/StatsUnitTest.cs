@@ -37,11 +37,11 @@ namespace Statistics.Test
         public void WhenInputHavingOneOrMoreNanThenReturnStatisticsOfRemainingNumbers()
         {
             var statsComputer = new StatsComputer();
-            var computedStats = statsComputer.CalculateStatistics(new List<float>{1.5F, float.NaN, 3.2F, 4.5F});
+            var computedStats = statsComputer.CalculateStatistics(new List<float>{5.4F, float.NaN, 8.9F, 1.6F});
             float epsilon = 0.001F;
-            Assert.True(Math.Abs(computedStats.Average - 3.067F) <= epsilon);
-            Assert.True(Math.Abs(computedStats.Max - 4.5F) <= epsilon);
-            Assert.True(Math.Abs(computedStats.Min - 1.5F) <= epsilon);
+            Assert.True(Math.Abs(computedStats.Average - 5.300) <= epsilon);
+            Assert.True(Math.Abs(computedStats.Max - 8.9F) <= epsilon);
+            Assert.True(Math.Abs(computedStats.Min - 1.6F) <= epsilon);
             Console.WriteLine("ReportsAverageMinMax Complete");
         }
     }
