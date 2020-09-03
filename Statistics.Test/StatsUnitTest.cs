@@ -2,6 +2,7 @@ using System;
 using Xunit;
 using Statistics;
 using System.Collections.Generic;
+using static Statistics.Stats;
 
 namespace Statistics.Test
 {
@@ -11,14 +12,14 @@ namespace Statistics.Test
         public void ReportsAverageMinMax()
         {
             var statsComputer = new StatsComputer();
-            var computedStats = statsComputer.CalculateStatistics(
-            new List<float>{1.5F, 8.9F, 3.2F, 4.5F});
+            var computedStats = statsComputer.CalculateStatistics(new List<float>{1.5F, 8.9F, 3.2F, 4.5F});
             float epsilon = 0.001F;
             Assert.True(Math.Abs(statsComputer.Average - 4.525) <= epsilon);
             Assert.True(Math.Abs(statsComputer.Max - 8.9) <= epsilon);
             Assert.True(Math.Abs(statsComputer.Min - 1.5) <= epsilon);
             Console.WriteLine("ReportsAverageMinMax Complete");
         }
+        [Fact]
         public void ReportsNaNForEmptyInput()
         {
             var statsComputer = new StatsComputer();
